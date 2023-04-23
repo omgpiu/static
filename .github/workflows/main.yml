@@ -21,8 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build NestJS app
-        run: npm run build
+      - name: Build NextJS app
+        run:  |
+          ls -la
+          npm run build
 
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
