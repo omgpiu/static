@@ -18,6 +18,12 @@ model Post {
   authorId  String?
 }
 
+model Message {
+  id        String     @default(cuid()) @id
+  title     String
+  content   String?
+}
+
 model User {
   id            String       @default(cuid()) @id
   name          String?
@@ -26,4 +32,10 @@ model User {
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
   posts         Post[]
   @@map(name: "users")
+}
+
+model NewMessage {
+  id        String     @default(cuid()) @id
+  title     String
+  content   String?
 }
